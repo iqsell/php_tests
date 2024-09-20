@@ -1,6 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+require_once __DIR__ . '/../src/ArrayUnique.php';
 
 // Тестовый класс для arrayUnique
 class ArrayUniqueTest extends TestCase
