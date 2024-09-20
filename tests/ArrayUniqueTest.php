@@ -1,46 +1,39 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
-require_once __DIR__ . '/../src/ArrayUnique.php';
+namespace Tests;
 
-// Тестовый класс для arrayUnique
+use PHPUnit\Framework\TestCase;
+use App\ArrayUnique;
+
 class ArrayUniqueTest extends TestCase
 {
-    // Тест на обычный массив с дубликатами
     public function testArrayWithDuplicates()
     {
-        $result = arrayUnique([123, 123, 123, 22, 23, 24]);
+        $result = ArrayUnique::ArrayUnique([123, 123, 123, 22, 23, 24]);
         $this->assertEquals([123, 22, 23, 24], $result);
     }
 
-    // Тест на массив без дубликатов
     public function testArrayWithoutDuplicates()
     {
-        $result = arrayUnique([1, 2, 3, 4, 5]);
+        $result = ArrayUnique::ArrayUnique([1, 2, 3, 4, 5]);
         $this->assertEquals([1, 2, 3, 4, 5], $result);
     }
 
-    // Тест на пустой массив
     public function testEmptyArray()
     {
-        $result = arrayUnique([]);
+        $result = ArrayUnique::ArrayUnique([]);
         $this->assertEquals([], $result);
     }
 
-    // Тест на массив с одинаковыми элементами
     public function testArrayWithAllSameElements()
     {
-        $result = arrayUnique([5, 5, 5, 5, 5]);
+        $result = ArrayUnique::ArrayUnique([5, 5, 5, 5, 5]);
         $this->assertEquals([5], $result);
     }
 
-    // Тест на массив с разными типами данных
     public function testArrayWithMixedTypes()
     {
-        $result = arrayUnique([1, '1', 1, '1', true, false, true]);
+        $result = ArrayUnique::ArrayUnique([1, '1', 1, '1', true, false, true]);
         $this->assertEquals([1, false], $result);
     }
-
-
 }
-
