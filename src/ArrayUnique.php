@@ -1,6 +1,11 @@
 <?php
 
-function arrayUnique(array $lst): array
+namespace App;
+
+class ArrayUnique
 {
-    return array_values(array_unique($lst));
+    public static function ArrayUnique(array $lst): array
+    {
+        return array_values(array_unique($lst));
+    }
 }
